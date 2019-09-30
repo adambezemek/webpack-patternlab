@@ -1,0 +1,72 @@
+{
+    "name": "edition-node-webpack",
+    "description": "A pure wrapper around patternlab-node core, the default pattern engine, and supporting frontend assets.",
+    "version": "2.0.2",
+    "dependencies": {},
+    "devDependencies": {
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/plugin-proposal-class-properties": "^7.5.5",
+        "@babel/polyfill": "^7.6.0",
+        "@babel/preset-env": "^7.6.2",
+        "@babel/register": "^7.6.2",
+        "@pattern-lab/starterkit-mustache-demo": "^5.0.0",
+        "babel-core": "^7.0.0-bridge.0",
+        "babel-loader": "^8.0.6",
+        "copy-webpack-plugin": "^5.0.4",
+        "core-js": "^3.2.1",
+        "event-hooks-webpack-plugin": "^2.1.4",
+        "globby": "^9.2.0",
+        "patternlab-node": "^2.12.0",
+        "styleguidekit-assets-default": "^3.5.2",
+        "styleguidekit-mustache-default": "^3.1.0",
+        "uglifyjs-webpack-plugin": "^2.2.0",
+        "webpack-config-utils": "^2.3.1",
+        "webpack-merge": "^4.2.2",
+        "autoprefixer": "^9.6.1",
+        "clean-webpack-plugin": "^3.0.0",
+        "css-loader": "^3.2.0",
+        "import-glob-loader": "^1.1.0",
+        "jquery": "^3.4.1",
+        "mini-css-extract-plugin": "^0.8.0",
+        "node-sass": "^4.12.0",
+        "npm-run-all": "^4.1.5",
+        "postcss-flexbugs-fixes": "^4.1.0",
+        "postcss-loader": "^3.0.0",
+        "sass-loader": "^8.0.0",
+        "style-loader": "^1.0.0",
+        "webpack": "^4.41.0",
+        "webpack-cli": "^3.3.9",
+        "webpack-dev-server": "^3.8.1",
+        "webpack-fix-style-only-entries": "^0.4.0"
+    },
+    "scripts": {
+        "start": "npm run patternlab:serve",
+        "build": "npm run patternlab:build",
+        "webpack:version": "webpack --v",
+        "patternlab:build": "webpack --mode=production --env.production",
+        "patternlab:serve": "webpack-dev-server --mode=development --env.development",
+        "patternlab:version": "node patternlab.js version",
+        "patternlab:help": "node patternlab.js help",
+        "patternlab:patternsonly": "node patternlab.js patternsonly",
+        "patternlab:liststarterkits": "node patternlab.js liststarterkits",
+        "patternlab:loadstarterkit": "node patternlab.js loadstarterkit",
+        "patternlab:installplugin": "node patternlab.js installplugin",
+        "postinstall": "node scripts/postinstall.js",
+        "diagnosis": "run-s patternlab:version webpack:version patternlab:build patternlab:serve"
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "useBuiltIns": "usage",
+                    "corejs": 3
+                }
+            ]
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    }
+}

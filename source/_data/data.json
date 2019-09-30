@@ -1,0 +1,10 @@
+{
+    "company" : {
+        "name" : "HikeTracker",
+        "url" : "http://hiketracker.com"
+    },
+    "title" : "Pattern Lab",
+    "pageTitle": "Page Title",
+    "htmlClass": "pl",
+    "bodyClass": "body"
+}
