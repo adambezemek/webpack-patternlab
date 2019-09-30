@@ -1,7 +1,11 @@
-console.log('init');
+console.log("init");
 
+import $ from "jquery";
 
-import {$,jQuery} from 'jquery';
-// export for others scripts to use
-window.$ = $;
-window.jQuery = jQuery;
+var APP = {
+  onReady: function() {
+    console.log("ready!");
+  }
+};
+
+$(document).ready(APP.onReady);

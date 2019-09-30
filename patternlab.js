@@ -1,14 +1,14 @@
 // NOTE: named arguments passed to npm scripts must be prefixed with '--'
 //       e.g. npm run loadstarterkit -- --kit=some-kit-name --clean
-const plConfig = require('./patternlab-config.json');
-const patternlab = require('patternlab-node')(plConfig);
+const plConfig = require("./patternlab-config.json");
+const patternlab = require("patternlab-node")(plConfig);
 
 function getConfiguredCleanOption() {
   return plConfig.cleanPublic;
 }
 
 function build(done) {
-  done = done || function(){};
+  done = done || function() {};
 
   const buildResult = patternlab.build(() => {}, getConfiguredCleanOption());
 
@@ -24,23 +24,22 @@ function version() {
   patternlab.version();
 }
 
-function help(){
+function help() {
   patternlab.help();
 }
 
 function patternsonly() {
-  function noop(){}
+  function noop() {}
 
   patternlab.patternsonly(noop, plConfig.cleanPublic);
 }
 
 function liststarterkits() {
-  patternlab.liststarterkits()
+  patternlab.liststarterkits();
 }
 
 function loadstarterkit(kit, clean) {
-  
-  if(!clean) {
+  if (!clean) {
     clean = false;
   }
   patternlab.loadstarterkit(kit, clean);
@@ -50,37 +49,39 @@ function installplugin(plugin) {
   patternlab.installplugin(plugin);
 }
 
-for (var i=0; i < process.argv.length; i++) {
-  
+for (var i = 0; i < process.argv.length; i++) {
   switch (process.argv[i]) {
-    case 'build':
+    case "build":
       build();
       break;
-    case 'version':
+    case "version":
       version();
       break;
-    case 'help':
+    case "help":
       help();
       break;
-    case 'patternsonly':
+    case "patternsonly":
       patternsonly();
       break;
-    case 'liststarterkits':
+    case "liststarterkits":
       liststarterkits();
       break;
-    case 'loadstarterkit':
-      if(process.env.npm_config_kit) {
-        loadstarterkit(process.env.npm_config_kit, process.env.npm_config_clean);
+    case "loadstarterkit":
+      if (process.env.npm_config_kit) {
+        loadstarterkit(
+          process.env.npm_config_kit,
+          process.env.npm_config_clean
+        );
       } else {
         console.info("====[ Pattern Lab Error: No Valid Kit Found ]====");
       }
       break;
-    case 'installplugin':
-      if(process.env.npm_config_plugin) {
+    case "installplugin":
+      if (process.env.npm_config_plugin) {
         installplugin(process.env.npm_config_plugin);
       } else {
         console.info("====[ Pattern Lab Error: No Valid Plugin Found ]====");
       }
-    break;
+      break;
   }
 }

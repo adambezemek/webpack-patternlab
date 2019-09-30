@@ -2,4 +2,4 @@
 title: Brand Colors
 ---
 
-This color palette contains HikeTracker-specific colors to be used throughout the interface.
+This color palette contains Client-specific colors to be used throughout the interface.
