@@ -1,46 +1,46 @@
 // webpack.config.js
-const webpack = require("webpack");
-const { resolve } = require("path");
-const globby = require("globby");
-const { getIfUtils, removeEmpty } = require("webpack-config-utils");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const EventHooksPlugin = require("event-hooks-webpack-plugin");
-const plConfig = require("./patternlab-config.json");
-const patternlab = require("patternlab-node")(plConfig);
-const patternEngines = require("patternlab-node/core/lib/pattern_engines");
-const merge = require("webpack-merge");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack');
+const { resolve } = require('path');
+const globby = require('globby');
+const { getIfUtils, removeEmpty } = require('webpack-config-utils');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const EventHooksPlugin = require('event-hooks-webpack-plugin');
+const plConfig = require('./patternlab-config.json');
+const patternlab = require('patternlab-node')(plConfig);
+const patternEngines = require('patternlab-node/core/lib/pattern_engines');
+const merge = require('webpack-merge');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = env => {
   const { ifProduction, ifDevelopment } = getIfUtils(env);
 
   const config = merge.smartStrategy(plConfig.app.webpackMerge)({
-    devtool: ifDevelopment("source-map"),
+    devtool: ifDevelopment('source-map'),
     context: resolve(__dirname, plConfig.paths.source.root),
     node: {
-      fs: "empty"
+      fs: 'empty',
     },
     entry: {
-      "js/app": globby
+      'js/app': globby
         .sync([
           resolve(__dirname, `${plConfig.paths.source.js}**/*.js`),
-          "!**/*.test.js"
+          '!**/*.test.js',
         ])
         .map(function(filePath) {
           return filePath;
         }),
-      "css/app": globby
+      'css/app': globby
         .sync([resolve(__dirname, `${plConfig.paths.source.scss}**/*.scss`)])
         .map(function(filePath) {
           return filePath;
-        })
+        }),
     },
     output: {
       path: resolve(__dirname, plConfig.paths.public.root),
-      filename: "[name].js"
+      filename: '[name].js',
     },
     optimization: {
       minimizer: [new UglifyJsPlugin(plConfig.app.uglify)],
@@ -48,13 +48,13 @@ module.exports = env => {
         cacheGroups: {
           vendor: {
             test: /node_modules/,
-            chunks: "initial",
-            name: "js/vendor",
+            chunks: 'initial',
+            name: 'js/vendor',
             priority: 10,
-            enforce: true
-          }
-        }
-      }
+            enforce: true,
+          },
+        },
+      },
     },
     plugins: removeEmpty([
       ifDevelopment(
@@ -66,41 +66,41 @@ module.exports = env => {
         {
           // Copy all images from source to public
           context: resolve(plConfig.paths.source.images),
-          from: "./**/*.*",
-          to: resolve(plConfig.paths.public.images)
+          from: './**/*.*',
+          to: resolve(plConfig.paths.public.images),
         },
         {
           // Copy favicon from source to public
           context: resolve(plConfig.paths.source.root),
-          from: "./*.ico",
-          to: resolve(plConfig.paths.public.root)
+          from: './*.ico',
+          to: resolve(plConfig.paths.public.root),
         },
         {
           // Copy all web fonts from source to public
           context: resolve(plConfig.paths.source.fonts),
-          from: "./*",
-          to: resolve(plConfig.paths.public.fonts)
+          from: './*',
+          to: resolve(plConfig.paths.public.fonts),
         },
         {
           // Copy all css from source to public
           context: resolve(plConfig.paths.source.css),
-          from: "./*.css",
-          to: resolve(plConfig.paths.public.css)
+          from: './*.css',
+          to: resolve(plConfig.paths.public.css),
         },
         {
           // Styleguide Copy everything but css
           context: resolve(plConfig.paths.source.styleguide),
-          from: "./**/*",
+          from: './**/*',
           to: resolve(plConfig.paths.public.root),
-          ignore: ["*.css"]
+          ignore: ['*.css'],
         },
         {
           // Styleguide Copy and flatten css
           context: resolve(plConfig.paths.source.styleguide),
-          from: "./**/*.css",
-          to: resolve(plConfig.paths.public.styleguide, "css"),
-          flatten: true
-        }
+          from: './**/*.css',
+          to: resolve(plConfig.paths.public.styleguide, 'css'),
+          flatten: true,
+        },
       ]),
       ifDevelopment(
         new EventHooksPlugin({
@@ -119,7 +119,7 @@ module.exports = env => {
               `${plConfig.paths.source.fonts}**/*`,
               `${plConfig.paths.source.images}**/*`,
               `${plConfig.paths.source.meta}**/*`,
-              `${plConfig.paths.source.annotations}**/*`
+              `${plConfig.paths.source.annotations}**/*`,
             ];
 
             const allWatchFiles = watchFiles.concat(templateFilePaths);
@@ -134,27 +134,27 @@ module.exports = env => {
                 compilation.fileDependencies.add(item);
               });
             });
-          }
+          },
         })
       ),
       new EventHooksPlugin({
         done: function(stats) {
           let cleanPublic = plConfig.cleanPublic;
           process.argv.forEach((val, index) => {
-            if (val.includes("cleanPublic")) {
-              val = val.split("=");
+            if (val.includes('cleanPublic')) {
+              val = val.split('=');
               cleanPublic = JSON.parse(val[1]);
             }
           });
 
           patternlab.build(() => {}, cleanPublic);
-        }
+        },
       }),
       new FixStyleOnlyEntriesPlugin(),
       new MiniCssExtractPlugin({
-        filename: "[name].css"
+        filename: '[name].css',
       }),
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
     ]),
     devServer: {
       contentBase: resolve(__dirname, plConfig.paths.public.root),
@@ -163,21 +163,27 @@ module.exports = env => {
       open: true,
       hot: true,
       watchContentBase: plConfig.app.webpackDevServer.watchContentBase,
-      watchOptions: plConfig.app.webpackDevServer.watchOptions
+      watchOptions: plConfig.app.webpackDevServer.watchOptions,
     },
     module: {
       rules: [
+        {
+          enforce: 'pre',
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'eslint-loader',
+        },
         {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
           use: [
             {
-              loader: "babel-loader",
+              loader: 'babel-loader',
               options: {
-                cacheDirectory: true
-              }
-            }
-          ]
+                cacheDirectory: true,
+              },
+            },
+          ],
         },
         {
           test: /\.(sa|sc|c)ss$/,
@@ -185,16 +191,16 @@ module.exports = env => {
             {
               loader: MiniCssExtractPlugin.loader,
               options: {
-                hmr: process.env.NODE_ENV === "development"
-              }
+                hmr: process.env.NODE_ENV === 'development',
+              },
             },
-            "css-loader",
-            "postcss-loader",
-            "sass-loader"
-          ]
-        }
-      ]
-    }
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
+          ],
+        },
+      ],
+    },
   });
 
   return config;
