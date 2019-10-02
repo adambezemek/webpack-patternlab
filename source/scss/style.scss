@@ -1,7 +1,27 @@
-body {
-  display: flex;
-}
+// TO USE BOOTSTRAP UNCOMMENT THESE 3 LINES
+// @import './../../node_modules/bootstrap/scss/bootstrap';
 
-h1 {
-  color: green;
-}
+// TO USE TAILWIND UNCOMMENT THESE 3 LINES
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+// @import 'tailwindcss/utilities';
+
+// PUT YOUR CLIENT CODE PARTIALS HERE:
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+@import './variables/colors';
+@import './variables/typography';
+
+/*------------------------------------*\
+    #ATOMS
+\*------------------------------------*/
+@import './atoms/fonts';
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+
+/*------------------------------------*\
+    #PAGES
+\*------------------------------------*/

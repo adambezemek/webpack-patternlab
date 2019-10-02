@@ -1,0 +1,41 @@
+/*------------------------------------*\
+    #COLORS
+\*------------------------------------*/
+/*
+ * Brand Colors
+ */
+$color-brand-primary: #252525 !default;
+$color-brand-secondary: #0ec9df !default;
+
+/*
+ * Neutral Colors
+ * 1) Neutral color variables use a numbered system to define variables for better maintainability.
+ *    "$color-gray-10" means "10% gray", which is a gray closer to white than to black. For more info
+ *    read https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3#.brevrq67p
+ */
+$color-white: #fff !default;
+$color-gray-02: #f7f9f9 !default;
+$color-gray-15: #d9d9d9 !default;
+$color-gray-35: #a5a5a5 !default;
+$color-gray-50: #808080 !default;
+$color-gray-65: #595959 !default;
+$color-gray-73: #444444 !default;
+$color-gray-87: #222222 !default;
+$color-black: #000 !default;
+
+$color-dim-50: rgba(0, 0, 0, 0.5) !default;
+$color-dim-70: rgba(0, 0, 0, 0.7) !default;
+
+/**
+ * Utility Colors
+ * 1) Utility colors are colors used to provide feedback, such as alert messages,
+ * form validation, etc.
+ */
+$color-utility-positive: #03804d !default;
+$color-utility-postitive-subtle: #d4f3e6 !default;
+$color-utility-caution: #a59b15 !default;
+$color-utility-caution-subtle: #fffecf !default;
+$color-utility-negative: #b12a0b !default;
+$color-utility-negative-subtle: #fdded8 !default;
+$color-utility-neutral: #0192d0 !default;
+$color-utility-neutral-subtle: #d3f2ff !default;

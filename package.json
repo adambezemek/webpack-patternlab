@@ -2,7 +2,13 @@
   "name": "webpack-patternlab",
   "version": "0.0.1",
   "description": "Webpack version of Patternlab",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adambezemek/webpack-patternlab"
+  },
+  "license": "(MIT OR Apache-2.0)",
   "scripts": {
+    "start": "npm run patternlab:serve",
     "build": "npm run patternlab:build",
     "diagnosis": "run-s patternlab:version webpack:version patternlab:build patternlab:serve",
     "postinstall": "node scripts/postinstall.js",
@@ -14,7 +20,6 @@
     "patternlab:patternsonly": "node patternlab.js patternsonly",
     "patternlab:serve": "webpack-dev-server --mode=development --env.development",
     "patternlab:version": "node patternlab.js version",
-    "start": "npm run patternlab:serve",
     "webpack:version": "webpack --v"
   },
   "babel": {
@@ -31,7 +36,12 @@
       ]
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.11.2",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "tailwindcss": "^1.1.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
@@ -44,23 +54,24 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "core-js": "^3.2.1",
     "css-loader": "^3.2.0",
     "eslint": "^6.5.0",
     "eslint-loader": "^3.0.2",
     "event-hooks-webpack-plugin": "^2.1.4",
+    "fibers": "^4.0.1",
     "globby": "^9.2.0",
     "import-glob-loader": "^1.1.0",
-    "jquery": "^3.4.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "patternlab-node": "^2.12.0",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "prettier": "1.18.2",
+    "sass": "^1.22.12",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "styleguidekit-assets-default": "^3.5.2",

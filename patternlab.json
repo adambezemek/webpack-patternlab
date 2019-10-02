@@ -1,0 +1,1436 @@
+{
+   "engines": {
+      "mustache": {
+         "engine": {
+            "name": "mustache.js",
+            "version": "2.3.2",
+            "tags": [
+               "{{",
+               "}}"
+            ]
+         },
+         "engineName": "mustache",
+         "engineFileExtension": ".mustache",
+         "expandPartials": true,
+         "findPartialsRE": {},
+         "findPartialsWithStyleModifiersRE": {},
+         "findPartialsWithPatternParametersRE": {},
+         "findListItemsRE": {}
+      }
+   },
+   "package": {
+      "_args": [
+         [
+            "patternlab-node@2.12.0",
+            "/Users/adambezemek/XC/webpack-patternlab"
+         ]
+      ],
+      "_development": true,
+      "_from": "patternlab-node@2.12.0",
+      "_id": "patternlab-node@2.12.0",
+      "_inBundle": false,
+      "_integrity": "sha1-AuxuLjLxwa0s7ls0rwNErBIeVQs=",
+      "_location": "/patternlab-node",
+      "_phantomChildren": {
+         "escape-string-regexp": "1.0.5",
+         "has-ansi": "2.0.0",
+         "strip-ansi": "3.0.1"
+      },
+      "_requested": {
+         "type": "version",
+         "registry": true,
+         "raw": "patternlab-node@2.12.0",
+         "name": "patternlab-node",
+         "escapedName": "patternlab-node",
+         "rawSpec": "2.12.0",
+         "saveSpec": null,
+         "fetchSpec": "2.12.0"
+      },
+      "_requiredBy": [
+         "#DEV:/"
+      ],
+      "_resolved": "https://registry.npmjs.org/patternlab-node/-/patternlab-node-2.12.0.tgz",
+      "_spec": "2.12.0",
+      "_where": "/Users/adambezemek/XC/webpack-patternlab",
+      "author": {
+         "name": "Brian Muenzenmeyer"
+      },
+      "bugs": {
+         "url": "https://github.com/pattern-lab/patternlab-node/issues"
+      },
+      "contributors": [
+         {
+            "name": "Geoff Pursell"
+         },
+         {
+            "name": "Raphael Okon"
+         },
+         {
+            "name": "tburny"
+         }
+      ],
+      "dependencies": {
+         "chalk": "^1.1.3",
+         "diveSync": "^0.3.0",
+         "fs-extra": "^0.30.0",
+         "glob": "^7.0.0",
+         "graphlib": "^2.1.1",
+         "js-beautify": "^1.6.3",
+         "js-yaml": "^3.6.1",
+         "lodash": "~4.13.1",
+         "markdown-it": "^6.0.1",
+         "node-fetch": "^1.6.0",
+         "patternengine-node-mustache": "^1.0.0",
+         "update-notifier": "^2.2.0"
+      },
+      "description": "Pattern Lab is a collection of tools to help you create atomic design systems. This is the node command line interface (CLI).",
+      "devDependencies": {
+         "eslint": "^3.5.0",
+         "rewire": "^2.5.2",
+         "tap": "^7.1.2"
+      },
+      "engines": {
+         "node": ">=4.0"
+      },
+      "homepage": "https://github.com/pattern-lab/patternlab-node#readme",
+      "keywords": [
+         "Pattern Lab",
+         "Atomic Web Design",
+         "Node",
+         "Grunt",
+         "Gulp",
+         "Javascript"
+      ],
+      "license": "MIT",
+      "main": "./core/lib/patternlab.js",
+      "name": "patternlab-node",
+      "repository": {
+         "type": "git",
+         "url": "git://github.com/pattern-lab/patternlab-node.git"
+      },
+      "scripts": {
+         "lint": "eslint core/**/*.js",
+         "test": "eslint core/**/*.js && tap test/*_tests.js --reporter spec"
+      },
+      "version": "2.12.0"
+   },
+   "config": {
+      "app": {
+         "webpackDevServer": {
+            "url": "http://localhost",
+            "port": 3030,
+            "watchContentBase": true,
+            "watchOptions": {
+               "aggregateTimeout": 500,
+               "ignored": [],
+               "info-verbosity": "verbose"
+            }
+         },
+         "webpackMerge": {
+            "entry": "replace"
+         },
+         "uglify": {
+            "sourceMap": false,
+            "parallel": true,
+            "uglifyOptions": {
+               "mangle": false
+            }
+         },
+         "namespace": ""
+      },
+      "paths": {
+         "source": {
+            "root": "./source/",
+            "app": "./source/_app/",
+            "patterns": "./source/_patterns/",
+            "data": "./source/_data/",
+            "meta": "./source/_meta/",
+            "annotations": "./source/_annotations/",
+            "styleguide": "./node_modules/styleguidekit-assets-default/dist/",
+            "patternlabFiles": "./node_modules/styleguidekit-mustache-default/views/",
+            "js": "./source/js/",
+            "images": "./source/images/",
+            "fonts": "./source/fonts/",
+            "css": "./source/css/",
+            "scss": "./source/scss/"
+         },
+         "public": {
+            "root": "./public/",
+            "patterns": "./public/patterns/",
+            "data": "./public/styleguide/data/",
+            "annotations": "./public/annotations/",
+            "styleguide": "./public/styleguide/",
+            "js": "./public/js/",
+            "images": "./public/images/",
+            "fonts": "./public/fonts/",
+            "css": "./public/css/"
+         }
+      },
+      "styleGuideExcludes": [],
+      "defaultPattern": "all",
+      "defaultShowPatternInfo": false,
+      "cleanPublic": true,
+      "patternExtension": "mustache",
+      "debug": true,
+      "ishControlsHide": {
+         "s": false,
+         "m": false,
+         "l": false,
+         "full": false,
+         "random": false,
+         "disco": true,
+         "hay": true,
+         "mqs": false,
+         "find": false,
+         "views-all": false,
+         "views-annotations": false,
+         "views-code": false,
+         "views-new": false,
+         "tools-all": false,
+         "tools-docs": false
+      },
+      "ishViewportRange": {
+         "s": [
+            240,
+            500
+         ],
+         "m": [
+            768,
+            768
+         ],
+         "l": [
+            800,
+            2600
+         ]
+      },
+      "patternStateCascade": [
+         "inprogress",
+         "inreview",
+         "complete"
+      ],
+      "patternStates": {},
+      "patternExportPatternPartials": [],
+      "patternExportDirectory": "./pattern_exports/",
+      "cacheBust": true,
+      "starterkitSubDir": "dist",
+      "starterkitPostInstallClean": false,
+      "outputFileSuffixes": {
+         "rendered": ".rendered",
+         "rawTemplate": "",
+         "markupOnly": ".markup-only"
+      },
+      "cleanOutputHtml": true,
+      "exportToGraphViz": false
+   },
+   "events": {
+      "_events": {},
+      "_eventsCount": 0
+   },
+   "graph": {
+      "graph": {
+         "_isDirected": true,
+         "_isMultigraph": false,
+         "_isCompound": false,
+         "_nodes": {
+            "00-atoms/00-global/00-brand-colors.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/00-global/01-neutral-colors.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/00-global/02-utility-colors.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/00-global/03-fonts.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/text/headings.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/text/inline-elements.mustache": {
+               "compileState": "clean"
+            },
+            "00-atoms/text/paragraph.mustache": {
+               "compileState": "clean"
+            },
+            "01-components/cards/card.mustache": {
+               "compileState": "clean",
+               "lineagePath": "../../patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "lineagePattern": "pages-home"
+            },
+            "02-pages/home/home.mustache": {
+               "compileState": "clean"
+            },
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache": {
+               "compileState": null
+            },
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache": {
+               "compileState": null
+            }
+         },
+         "_in": {
+            "00-atoms/00-global/00-brand-colors.mustache": {},
+            "00-atoms/00-global/01-neutral-colors.mustache": {},
+            "00-atoms/00-global/02-utility-colors.mustache": {},
+            "00-atoms/00-global/03-fonts.mustache": {},
+            "00-atoms/text/headings.mustache": {},
+            "00-atoms/text/inline-elements.mustache": {},
+            "00-atoms/text/paragraph.mustache": {},
+            "01-components/cards/card.mustache": {
+               "02-pages/home/home.mustache\u000101-components/cards/card.mustache\u0001\u0000": {
+                  "v": "02-pages/home/home.mustache",
+                  "w": "01-components/cards/card.mustache"
+               }
+            },
+            "02-pages/home/home.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache": {}
+         },
+         "_preds": {
+            "00-atoms/00-global/00-brand-colors.mustache": {},
+            "00-atoms/00-global/01-neutral-colors.mustache": {},
+            "00-atoms/00-global/02-utility-colors.mustache": {},
+            "00-atoms/00-global/03-fonts.mustache": {},
+            "00-atoms/text/headings.mustache": {},
+            "00-atoms/text/inline-elements.mustache": {},
+            "00-atoms/text/paragraph.mustache": {},
+            "01-components/cards/card.mustache": {
+               "02-pages/home/home.mustache": 1
+            },
+            "02-pages/home/home.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache": {}
+         },
+         "_out": {
+            "00-atoms/00-global/00-brand-colors.mustache": {},
+            "00-atoms/00-global/01-neutral-colors.mustache": {},
+            "00-atoms/00-global/02-utility-colors.mustache": {},
+            "00-atoms/00-global/03-fonts.mustache": {},
+            "00-atoms/text/headings.mustache": {},
+            "00-atoms/text/inline-elements.mustache": {},
+            "00-atoms/text/paragraph.mustache": {},
+            "01-components/cards/card.mustache": {},
+            "02-pages/home/home.mustache": {
+               "02-pages/home/home.mustache\u000101-components/cards/card.mustache\u0001\u0000": {
+                  "v": "02-pages/home/home.mustache",
+                  "w": "01-components/cards/card.mustache"
+               }
+            },
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache": {}
+         },
+         "_sucs": {
+            "00-atoms/00-global/00-brand-colors.mustache": {},
+            "00-atoms/00-global/01-neutral-colors.mustache": {},
+            "00-atoms/00-global/02-utility-colors.mustache": {},
+            "00-atoms/00-global/03-fonts.mustache": {},
+            "00-atoms/text/headings.mustache": {},
+            "00-atoms/text/inline-elements.mustache": {},
+            "00-atoms/text/paragraph.mustache": {},
+            "01-components/cards/card.mustache": {},
+            "02-pages/home/home.mustache": {
+               "01-components/cards/card.mustache": 1
+            },
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache": {},
+            "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache": {}
+         },
+         "_edgeObjs": {
+            "02-pages/home/home.mustache\u000101-components/cards/card.mustache\u0001\u0000": {
+               "v": "02-pages/home/home.mustache",
+               "w": "01-components/cards/card.mustache"
+            }
+         },
+         "_edgeLabels": {
+            "02-pages/home/home.mustache\u000101-components/cards/card.mustache\u0001\u0000": {}
+         },
+         "_nodeCount": 11,
+         "_edgeCount": 1
+      },
+      "patterns": {
+         "key2pattern": {},
+         "partials": {}
+      },
+      "timestamp": 1569962388000,
+      "version": 1
+   },
+   "isBusy": true,
+   "data": {
+      "title": "XCentium Pattern Lab",
+      "link": {
+         "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+         "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+         "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+         "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+         "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+         "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+         "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+         "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+         "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+         "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+         "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+      },
+      "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+      "cacheBuster": 1569962387817,
+      "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+   },
+   "listitems": null,
+   "header": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?{{ cacheBuster }}\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?{{ cacheBuster }}\" media=\"all\" />\n",
+   "footer": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {{{ patternData }}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-{{ cacheBuster }}\">\n  (function() {\n    if (self != top) {\n      var cb = '{{ cacheBuster}}';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-{{ cacheBuster }}\">\n  (function() {\n    if (self != top) {\n      var cb = '{{ cacheBuster}}';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n",
+   "patternSection": "<div id=\"{{ patternPartial }}\" class=\"sg-pattern\">\n  <div class=\"sg-pattern-head\">\n    <h3 class=\"sg-pattern-title\">\n      <a href=\"../../patterns/{{ patternLink }}\" class=\"patternLink\" data-patternpartial=\"{{ patternPartial }}\" title=\"Link to Pattern\">\n          {{ patternName }}\n          {{# patternState }}\n            <span class=\"sg-pattern-state {{ . }}\">{{ . }}</span>\n          {{/ patternState }}\n      </a>\n    </h3>\n    <div class=\"sg-pattern-breadcrumb\">{{ patternBreadcrumb }}</div>\n    <a href=\"#\" data-patternpartial=\"{{ patternPartial }}\" title=\"View Pattern Info\" id=\"sg-pattern-extra-toggle-{{patternPartial}}\" class=\"sg-pattern-extra-toggle\"><span>&#9660;</span></a>\n  </div>\n  <div class=\"sg-pattern-extra\" id=\"sg-pattern-extra-{{ patternPartial }}\">\n    \n  </div>\n  <div class=\"sg-pattern-example\">\n    {{{ patternPartialCode }}}\n  </div>\n  <script type=\"text/json\" id=\"sg-pattern-data-{{patternPartial}}\" class=\"sg-pattern-data\">\n    {{{ patternData }}}\n  </script>\n</div><!--end .sg-pattern-->\n",
+   "patternSectionSubType": "<div id=\"{{ patternPartial }}\" class=\"sg-pattern-category\">\n  <h2 class=\"sg-pattern-category-title\"><a href=\"../../patterns/{{ patternLink }}\" class=\"patternLink\" data-patternpartial=\"{{ patternPartial }}\">{{ patternName }}</a></h2>\n\n  <div class=\"sg-pattern-category-body\">\n    {{{ patternDesc }}}\n  </div><!--end sg-pattern-category-body-->\n  \n</div><!--end sg-pattern-category-->\n",
+   "viewAll": "<!-- View All Patterns in a Pattern Sub-Type -->\n<div class=\"sg-main\" role=\"main\">\n  \n  <!-- Patterns -->\n  <div id=\"sg-patterns\">\n    {{# partials }}\n      {{# patternSectionSubtype }}\n        {{> patternSectionSubtype }}\n      {{/ patternSectionSubtype }}\n      {{^ patternSectionSubtype }}\n        {{> patternSection }}\n      {{/ patternSectionSubtype }}\n    {{/ partials }}\n  </div> <!--end #sg-patterns-->\n\n</div><!--end .sg-main-->\n",
+   "patterns": [
+      {
+         "relPath": "00-atoms/00-global/00-brand-colors.mustache",
+         "fileName": "00-brand-colors",
+         "subdir": "00-atoms/00-global",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-00-global-00-brand-colors",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>This color palette contains Client-specific colors to be used throughout the interface.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Brand Colors\",\"patternPartial\":\"atoms-brand-colors\",\"patternState\":\"inreview\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "brand-colors",
+         "patternName": "Brand Colors",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "global",
+         "patternSubType": "00-global",
+         "flatPatternPath": "00-atoms-00-global",
+         "patternLink": "00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+         "patternPartial": "atoms-brand-colors",
+         "verbosePartial": "00-atoms/00-global/00-brand-colors",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "inreview",
+         "template": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #252525;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-primary <br />\r\n\t\t\t#252525\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0ec9df;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-secondary <br />\r\n\t\t\t#0ec9df\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternPartialCode": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #252525;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-primary <br />\r\n\t\t\t#252525\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0ec9df;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-secondary <br />\r\n\t\t\t#0ec9df\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952473596,
+         "patternDescExists": true,
+         "patternDesc": "<p>This color palette contains Client-specific colors to be used throughout the interface.</p>\n",
+         "allMarkdown": {
+            "title": "Brand Colors",
+            "state": "inreview",
+            "markdown": "<p>This color palette contains Client-specific colors to be used throughout the interface.</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #252525;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-primary <br />\r\n\t\t\t#252525\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0ec9df;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-secondary <br />\r\n\t\t\t#0ec9df\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>This color palette contains Client-specific colors to be used throughout the interface.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Brand Colors\",\"patternPartial\":\"atoms-brand-colors\",\"patternState\":\"inreview\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}",
+         "isSubtypePattern": false
+      },
+      {
+         "relPath": "00-atoms/00-global/01-neutral-colors.mustache",
+         "fileName": "01-neutral-colors",
+         "subdir": "00-atoms/00-global",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-00-global-01-neutral-colors",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>The neutral color palette contains grayscale values that are used throughout the interface. For great tips about color in design systems, check out <a href=\\\"https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3\\\">this post</a> by Nathan Curtis.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Neutral Colors\",\"patternPartial\":\"atoms-neutral-colors\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "neutral-colors",
+         "patternName": "Neutral Colors",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "global",
+         "patternSubType": "00-global",
+         "flatPatternPath": "00-atoms-00-global",
+         "patternLink": "00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+         "patternPartial": "atoms-neutral-colors",
+         "verbosePartial": "00-atoms/00-global/01-neutral-colors",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #ffffff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-white <br />\r\n\t\t\t#ffffff\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f7f9f9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-02 <br />\r\n\t\t\t#f7f9f9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d9d9d9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-15 <br />\r\n\t\t\t#d9d9d9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a5a5a5;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-35 <br />\r\n\t\t\t#a5a5a5\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #808080;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-50 <br />\r\n\t\t\t#808080\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #595959;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-65 <br />\r\n\t\t\t#595959\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #444444;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-73 <br />\r\n\t\t\t#444444\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #222222;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-87 <br />\r\n\t\t\t#222222\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #000000;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-black <br />\r\n\t\t\t#000000\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternPartialCode": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #ffffff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-white <br />\r\n\t\t\t#ffffff\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f7f9f9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-02 <br />\r\n\t\t\t#f7f9f9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d9d9d9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-15 <br />\r\n\t\t\t#d9d9d9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a5a5a5;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-35 <br />\r\n\t\t\t#a5a5a5\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #808080;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-50 <br />\r\n\t\t\t#808080\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #595959;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-65 <br />\r\n\t\t\t#595959\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #444444;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-73 <br />\r\n\t\t\t#444444\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #222222;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-87 <br />\r\n\t\t\t#222222\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #000000;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-black <br />\r\n\t\t\t#000000\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952473596,
+         "patternDescExists": true,
+         "patternDesc": "<p>The neutral color palette contains grayscale values that are used throughout the interface. For great tips about color in design systems, check out <a href=\"https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3\">this post</a> by Nathan Curtis.</p>\n",
+         "allMarkdown": {
+            "title": "Neutral Colors",
+            "markdown": "<p>The neutral color palette contains grayscale values that are used throughout the interface. For great tips about color in design systems, check out <a href=\"https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3\">this post</a> by Nathan Curtis.</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #ffffff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-white <br />\r\n\t\t\t#ffffff\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f7f9f9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-02 <br />\r\n\t\t\t#f7f9f9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d9d9d9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-15 <br />\r\n\t\t\t#d9d9d9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a5a5a5;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-35 <br />\r\n\t\t\t#a5a5a5\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #808080;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-50 <br />\r\n\t\t\t#808080\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #595959;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-65 <br />\r\n\t\t\t#595959\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #444444;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-73 <br />\r\n\t\t\t#444444\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #222222;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-87 <br />\r\n\t\t\t#222222\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #000000;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-black <br />\r\n\t\t\t#000000\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>The neutral color palette contains grayscale values that are used throughout the interface. For great tips about color in design systems, check out <a href=\\\"https://medium.com/eightshapes-llc/color-in-design-systems-a1c80f65fa3\\\">this post</a> by Nathan Curtis.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Neutral Colors\",\"patternPartial\":\"atoms-neutral-colors\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}"
+      },
+      {
+         "relPath": "00-atoms/00-global/02-utility-colors.mustache",
+         "fileName": "02-utility-colors",
+         "subdir": "00-atoms/00-global",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-00-global-02-utility-colors",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>The utility color palette defines colors that are used to convey meaning such as success, error, warning, and information to the user. These colors should be used for things like alert messages, form validation, tooltips, and other kinds of messaging.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Utility Colors\",\"patternPartial\":\"atoms-utility-colors\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "utility-colors",
+         "patternName": "Utility Colors",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "global",
+         "patternSubType": "00-global",
+         "flatPatternPath": "00-atoms-00-global",
+         "patternLink": "00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+         "patternPartial": "atoms-utility-colors",
+         "verbosePartial": "00-atoms/00-global/02-utility-colors",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #03804d;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive <br />\r\n\t\t\t#03804d\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d4f3e6;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive-subtle <br />\r\n\t\t\t#d4f3e6\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a59b15;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution <br />\r\n\t\t\t#a59b15\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fffecf;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution-subtle <br />\r\n\t\t\t#fffecf\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b12a0b;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative <br />\r\n\t\t\t#b12a0b\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fdded8;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative-subtle <br />\r\n\t\t\t#fdded8\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0192d0;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral <br />\r\n\t\t\t#0192d0\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d3f2ff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral-subtle <br />\r\n\t\t\t#d3f2ff\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternPartialCode": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #03804d;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive <br />\r\n\t\t\t#03804d\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d4f3e6;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive-subtle <br />\r\n\t\t\t#d4f3e6\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a59b15;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution <br />\r\n\t\t\t#a59b15\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fffecf;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution-subtle <br />\r\n\t\t\t#fffecf\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b12a0b;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative <br />\r\n\t\t\t#b12a0b\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fdded8;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative-subtle <br />\r\n\t\t\t#fdded8\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0192d0;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral <br />\r\n\t\t\t#0192d0\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d3f2ff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral-subtle <br />\r\n\t\t\t#d3f2ff\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952473596,
+         "patternDescExists": true,
+         "patternDesc": "<p>The utility color palette defines colors that are used to convey meaning such as success, error, warning, and information to the user. These colors should be used for things like alert messages, form validation, tooltips, and other kinds of messaging.</p>\n",
+         "allMarkdown": {
+            "title": "Utility Colors",
+            "markdown": "<p>The utility color palette defines colors that are used to convey meaning such as success, error, warning, and information to the user. These colors should be used for things like alert messages, form validation, tooltips, and other kinds of messaging.</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #03804d;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive <br />\r\n\t\t\t#03804d\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d4f3e6;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive-subtle <br />\r\n\t\t\t#d4f3e6\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a59b15;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution <br />\r\n\t\t\t#a59b15\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fffecf;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution-subtle <br />\r\n\t\t\t#fffecf\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b12a0b;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative <br />\r\n\t\t\t#b12a0b\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fdded8;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative-subtle <br />\r\n\t\t\t#fdded8\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0192d0;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral <br />\r\n\t\t\t#0192d0\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d3f2ff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral-subtle <br />\r\n\t\t\t#d3f2ff\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>The utility color palette defines colors that are used to convey meaning such as success, error, warning, and information to the user. These colors should be used for things like alert messages, form validation, tooltips, and other kinds of messaging.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Utility Colors\",\"patternPartial\":\"atoms-utility-colors\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}"
+      },
+      {
+         "relPath": "00-atoms/00-global/03-fonts.mustache",
+         "fileName": "03-fonts",
+         "subdir": "00-atoms/00-global",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-00-global-03-fonts",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>These fonts that are used on the site.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Fonts\",\"patternPartial\":\"atoms-fonts\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "fonts",
+         "patternName": "Fonts",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "global",
+         "patternSubType": "00-global",
+         "flatPatternPath": "00-atoms-00-global",
+         "patternLink": "00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+         "patternPartial": "atoms-fonts",
+         "verbosePartial": "00-atoms/00-global/03-fonts",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<div>Primary font: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</div>\r\n<div>\r\n    <em>Primary font italic: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</em>\r\n</div>\r\n<div>\r\n    <strong>Primary font bold: \"HelveticaNeue\", \"Helvetica\", \"Arial\",\r\n        sans-serif;</strong>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    Secondary font: Georgia, Times, \"Times New Roman\", serif;\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <em>Secondary font italic: Georgia, Times, \"Times New Roman\", serif;</em>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <strong>Secondary font bold; Georgia, Times, \"Times New Roman\", serif;</strong>\r\n</div>",
+         "patternPartialCode": "<div>Primary font: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</div>\r\n<div>\r\n    <em>Primary font italic: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</em>\r\n</div>\r\n<div>\r\n    <strong>Primary font bold: \"HelveticaNeue\", \"Helvetica\", \"Arial\",\r\n        sans-serif;</strong>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    Secondary font: Georgia, Times, \"Times New Roman\", serif;\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <em>Secondary font italic: Georgia, Times, \"Times New Roman\", serif;</em>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <strong>Secondary font bold; Georgia, Times, \"Times New Roman\", serif;</strong>\r\n</div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952473596,
+         "patternDescExists": true,
+         "patternDesc": "<p>These fonts that are used on the site.</p>\n",
+         "allMarkdown": {
+            "title": "Fonts",
+            "markdown": "<p>These fonts that are used on the site.</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<div>Primary font: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</div>\r\n<div>\r\n    <em>Primary font italic: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</em>\r\n</div>\r\n<div>\r\n    <strong>Primary font bold: \"HelveticaNeue\", \"Helvetica\", \"Arial\",\r\n        sans-serif;</strong>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    Secondary font: Georgia, Times, \"Times New Roman\", serif;\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <em>Secondary font italic: Georgia, Times, \"Times New Roman\", serif;</em>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <strong>Secondary font bold; Georgia, Times, \"Times New Roman\", serif;</strong>\r\n</div>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>These fonts that are used on the site.</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"global\"},\"patternExtension\":\"mustache\",\"patternName\":\"Fonts\",\"patternPartial\":\"atoms-fonts\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}"
+      },
+      {
+         "relPath": "00-atoms/text/headings.mustache",
+         "fileName": "headings",
+         "subdir": "00-atoms/text",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-text-headings",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Headings\",\"patternPartial\":\"atoms-headings\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "headings",
+         "patternName": "Headings",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "text",
+         "patternSubType": "text",
+         "flatPatternPath": "00-atoms-text",
+         "patternLink": "00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+         "patternPartial": "atoms-headings",
+         "verbosePartial": "00-atoms/text/headings",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>\r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5>\r\n<h6>Heading Level 6</h6>",
+         "patternPartialCode": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>\r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5>\r\n<h6>Heading Level 6</h6>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952512096,
+         "patternDescExists": true,
+         "patternDesc": "<p>[Insert description here]</p>\n",
+         "allMarkdown": {
+            "title": "Headings",
+            "markdown": "<p>[Insert description here]</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>\r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5>\r\n<h6>Heading Level 6</h6>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Headings\",\"patternPartial\":\"atoms-headings\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}",
+         "isSubtypePattern": false
+      },
+      {
+         "relPath": "00-atoms/text/inline-elements.mustache",
+         "fileName": "inline-elements",
+         "subdir": "00-atoms/text",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-text-inline-elements",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Inline Elements\",\"patternPartial\":\"atoms-inline-elements\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "inline-elements",
+         "patternName": "Inline Elements",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "text",
+         "patternSubType": "text",
+         "flatPatternPath": "00-atoms-text",
+         "patternLink": "00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+         "patternPartial": "atoms-inline-elements",
+         "verbosePartial": "00-atoms/text/inline-elements",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<div class=\"text\">\r\n\t<p><a href=\"#\">This is a text link</a></p>\r\n\r\n\t<p><strong>Strong is used to indicate strong importance</strong></p>\r\n\r\n\t<p><em>This text has added emphasis</em></p>\r\n\r\n\t<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>\r\n\r\n\t<p>The <i>i element</i> is text that is set off from the normal text</p>\r\n\r\n\t<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>\r\n\r\n\t<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>\r\n\r\n\t<p><s>This text has a strikethrough</s></p>\r\n\r\n\t<p>Superscript<sup>®</sup></p>\r\n\r\n\t<p>Subscript for things like H<sub>2</sub>O</p>\r\n\r\n\t<p><small>This small text is small for for fine print, etc.</small></p>\r\n\r\n\t<p>Abbreviation: <abbr title=\"HyperText Markup Language\">HTML</abbr></p>\r\n\r\n\t<p>Keybord input: <kbd>Cmd</kbd></p>\r\n\r\n\t<p><q cite=\"https://developer.mozilla.org/en-US/docs/HTML/Element/q\">This text is a short inline quotation</q></p>\r\n\r\n\t<p><cite>This is a citation</cite></p>\r\n\r\n\t<p>The <dfn>dfn element</dfn> indicates a definition.</p>\r\n\r\n\t<p>The <mark>mark element</mark> indicates a highlight</p>\r\n\r\n\t<p><code>This is what inline code looks like.</code></p>\r\n\r\n\t<p><samp>This is sample output from a computer program</samp></p>\r\n\r\n\t<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>\r\n</div>\r\n<!--end .text-->",
+         "patternPartialCode": "<div class=\"text\">\r\n\t<p><a href=\"#\">This is a text link</a></p>\r\n\r\n\t<p><strong>Strong is used to indicate strong importance</strong></p>\r\n\r\n\t<p><em>This text has added emphasis</em></p>\r\n\r\n\t<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>\r\n\r\n\t<p>The <i>i element</i> is text that is set off from the normal text</p>\r\n\r\n\t<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>\r\n\r\n\t<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>\r\n\r\n\t<p><s>This text has a strikethrough</s></p>\r\n\r\n\t<p>Superscript<sup>®</sup></p>\r\n\r\n\t<p>Subscript for things like H<sub>2</sub>O</p>\r\n\r\n\t<p><small>This small text is small for for fine print, etc.</small></p>\r\n\r\n\t<p>Abbreviation: <abbr title=\"HyperText Markup Language\">HTML</abbr></p>\r\n\r\n\t<p>Keybord input: <kbd>Cmd</kbd></p>\r\n\r\n\t<p><q cite=\"https://developer.mozilla.org/en-US/docs/HTML/Element/q\">This text is a short inline quotation</q></p>\r\n\r\n\t<p><cite>This is a citation</cite></p>\r\n\r\n\t<p>The <dfn>dfn element</dfn> indicates a definition.</p>\r\n\r\n\t<p>The <mark>mark element</mark> indicates a highlight</p>\r\n\r\n\t<p><code>This is what inline code looks like.</code></p>\r\n\r\n\t<p><samp>This is sample output from a computer program</samp></p>\r\n\r\n\t<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>\r\n</div>\r\n<!--end .text-->",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952512096,
+         "patternDescExists": true,
+         "patternDesc": "<p>[Insert description here]</p>\n",
+         "allMarkdown": {
+            "title": "Inline Elements",
+            "markdown": "<p>[Insert description here]</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<div class=\"text\">\r\n\t<p><a href=\"#\">This is a text link</a></p>\r\n\r\n\t<p><strong>Strong is used to indicate strong importance</strong></p>\r\n\r\n\t<p><em>This text has added emphasis</em></p>\r\n\r\n\t<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>\r\n\r\n\t<p>The <i>i element</i> is text that is set off from the normal text</p>\r\n\r\n\t<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>\r\n\r\n\t<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>\r\n\r\n\t<p><s>This text has a strikethrough</s></p>\r\n\r\n\t<p>Superscript<sup>®</sup></p>\r\n\r\n\t<p>Subscript for things like H<sub>2</sub>O</p>\r\n\r\n\t<p><small>This small text is small for for fine print, etc.</small></p>\r\n\r\n\t<p>Abbreviation: <abbr title=\"HyperText Markup Language\">HTML</abbr></p>\r\n\r\n\t<p>Keybord input: <kbd>Cmd</kbd></p>\r\n\r\n\t<p><q cite=\"https://developer.mozilla.org/en-US/docs/HTML/Element/q\">This text is a short inline quotation</q></p>\r\n\r\n\t<p><cite>This is a citation</cite></p>\r\n\r\n\t<p>The <dfn>dfn element</dfn> indicates a definition.</p>\r\n\r\n\t<p>The <mark>mark element</mark> indicates a highlight</p>\r\n\r\n\t<p><code>This is what inline code looks like.</code></p>\r\n\r\n\t<p><samp>This is sample output from a computer program</samp></p>\r\n\r\n\t<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>\r\n</div>\r\n<!--end .text-->",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Inline Elements\",\"patternPartial\":\"atoms-inline-elements\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}"
+      },
+      {
+         "relPath": "00-atoms/text/paragraph.mustache",
+         "fileName": "paragraph",
+         "subdir": "00-atoms/text",
+         "fileExtension": ".mustache",
+         "name": "00-atoms-text-paragraph",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Paragraph\",\"patternPartial\":\"atoms-paragraph\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "paragraph",
+         "patternName": "Paragraph",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "text",
+         "patternSubType": "text",
+         "flatPatternPath": "00-atoms-text",
+         "patternLink": "00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+         "patternPartial": "atoms-paragraph",
+         "verbosePartial": "00-atoms/text/paragraph",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<p>A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a\r\n    discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though\r\n    not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to\r\n    organize longer prose.</p>",
+         "patternPartialCode": "<p>A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a\r\n    discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though\r\n    not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to\r\n    organize longer prose.</p>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952512096,
+         "patternDescExists": true,
+         "patternDesc": "<p>[Insert description here]</p>\n",
+         "allMarkdown": {
+            "title": "Paragraph",
+            "markdown": "<p>[Insert description here]</p>\n"
+         },
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<p>A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a\r\n    discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though\r\n    not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to\r\n    organize longer prose.</p>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": false,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":false,\"patternDesc\":\"<p>[Insert description here]</p>\\n\",\"patternBreadcrumb\":{\"patternType\":\"atoms\",\"patternSubtype\":\"text\"},\"patternExtension\":\"mustache\",\"patternName\":\"Paragraph\",\"patternPartial\":\"atoms-paragraph\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}"
+      },
+      {
+         "relPath": "01-components/cards/card.mustache",
+         "fileName": "card",
+         "subdir": "01-components/cards",
+         "fileExtension": ".mustache",
+         "name": "01-components-cards-card",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":true,\"patternLineagesR\":[{\"lineagePattern\":\"pages-home\",\"lineagePath\":\"../../patterns/02-pages-home-home/02-pages-home-home.rendered.html\"}],\"lineageR\":[{\"lineagePattern\":\"pages-home\",\"lineagePath\":\"../../patterns/02-pages-home-home/02-pages-home-home.rendered.html\"}],\"patternLineageEExists\":true,\"patternDesc\":\"\",\"patternBreadcrumb\":{\"patternType\":\"components\",\"patternSubtype\":\"cards\"},\"patternExtension\":\"mustache\",\"patternName\":\"Card\",\"patternPartial\":\"components-card\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "card",
+         "patternName": "Card",
+         "patternGroup": "components",
+         "patternType": "01-components",
+         "patternSubGroup": "cards",
+         "patternSubType": "cards",
+         "flatPatternPath": "01-components-cards",
+         "patternLink": "01-components-cards-card/01-components-cards-card.rendered.html",
+         "patternPartial": "components-card",
+         "verbosePartial": "01-components/cards/card",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>",
+         "patternPartialCode": "<div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [
+            {
+               "lineagePattern": "pages-home",
+               "lineagePath": "../../patterns/02-pages-home-home/02-pages-home-home.rendered.html"
+            }
+         ],
+         "lineageRIndex": [
+            "pages-home"
+         ],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569952560514,
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>",
+         "patternLineages": [],
+         "patternLineageExists": false,
+         "patternLineagesR": [
+            {
+               "lineagePattern": "pages-home",
+               "lineagePath": "../../patterns/02-pages-home-home/02-pages-home-home.rendered.html"
+            }
+         ],
+         "patternLineageRExists": true,
+         "patternLineageEExists": true,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":false,\"patternLineages\":[],\"lineage\":[],\"patternLineageRExists\":true,\"patternLineagesR\":[{\"lineagePattern\":\"pages-home\",\"lineagePath\":\"../../patterns/02-pages-home-home/02-pages-home-home.rendered.html\"}],\"lineageR\":[{\"lineagePattern\":\"pages-home\",\"lineagePath\":\"../../patterns/02-pages-home-home/02-pages-home-home.rendered.html\"}],\"patternLineageEExists\":true,\"patternDesc\":\"\",\"patternBreadcrumb\":{\"patternType\":\"components\",\"patternSubtype\":\"cards\"},\"patternExtension\":\"mustache\",\"patternName\":\"Card\",\"patternPartial\":\"components-card\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}",
+         "isSubtypePattern": false
+      },
+      {
+         "relPath": "02-pages/home/home.mustache",
+         "fileName": "home",
+         "subdir": "02-pages/home",
+         "fileExtension": ".mustache",
+         "name": "02-pages-home-home",
+         "jsonFileData": {
+            "title": "XCentium Pattern Lab",
+            "link": {
+               "atoms-brand-colors": "/patterns/00-atoms-00-global-00-brand-colors/00-atoms-00-global-00-brand-colors.rendered.html",
+               "atoms-neutral-colors": "/patterns/00-atoms-00-global-01-neutral-colors/00-atoms-00-global-01-neutral-colors.rendered.html",
+               "atoms-utility-colors": "/patterns/00-atoms-00-global-02-utility-colors/00-atoms-00-global-02-utility-colors.rendered.html",
+               "atoms-fonts": "/patterns/00-atoms-00-global-03-fonts/00-atoms-00-global-03-fonts.rendered.html",
+               "atoms-headings": "/patterns/00-atoms-text-headings/00-atoms-text-headings.rendered.html",
+               "atoms-inline-elements": "/patterns/00-atoms-text-inline-elements/00-atoms-text-inline-elements.rendered.html",
+               "atoms-paragraph": "/patterns/00-atoms-text-paragraph/00-atoms-text-paragraph.rendered.html",
+               "components-card": "/patterns/01-components-cards-card/01-components-cards-card.rendered.html",
+               "pages-home": "/patterns/02-pages-home-home/02-pages-home-home.rendered.html",
+               "-head": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+               "-foot": "/patterns/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html"
+            },
+            "patternLabHead": "<!-- never cache patterns -->\n<meta http-equiv=\"cache-control\" content=\"max-age=0\" />\n<meta http-equiv=\"cache-control\" content=\"no-cache\" />\n<meta http-equiv=\"expires\" content=\"0\" />\n<meta http-equiv=\"expires\" content=\"Tue, 01 Jan 1980 1:00:00 GMT\" />\n<meta http-equiv=\"pragma\" content=\"no-cache\" />\n\n<link rel=\"stylesheet\" href=\"../../styleguide/css/styleguide.min.css?1569962387817\" media=\"all\">\n<link rel=\"stylesheet\" href=\"../../styleguide/css/prism-typeahead.min.css?1569962387817\" media=\"all\" />\n",
+            "cacheBuster": 1569962387817,
+            "patternLabFoot": "<script type=\"text/json\" id=\"sg-pattern-data-footer\" class=\"sg-pattern-data\">\n  {\"cssEnabled\":false,\"patternLineageExists\":true,\"patternLineages\":[{\"lineagePattern\":\"components-card\",\"lineagePath\":\"../../patterns/01-components-cards-card/01-components-cards-card.rendered.html\"}],\"lineage\":[{\"lineagePattern\":\"components-card\",\"lineagePath\":\"../../patterns/01-components-cards-card/01-components-cards-card.rendered.html\"}],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":true,\"patternDesc\":\"\",\"patternBreadcrumb\":{\"patternType\":\"pages\",\"patternSubtype\":\"home\"},\"patternExtension\":\"mustache\",\"patternName\":\"Home\",\"patternPartial\":\"pages-home\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}\n</script>\n\n<script>\n  /*!\n   * scriptLoader - v0.1\n   *\n   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com\n   * Licensed under the MIT license\n   *\n   */\n  \n  var scriptLoader = {\n    \n    run: function(js,cb,target) {\n      var s  = document.getElementById(target+'-'+cb);\n      for (var i = 0; i < js.length; i++) {\n        var src = (typeof js[i] != 'string') ? js[i].src : js[i];\n        var c   = document.createElement('script');\n        c.src   = '../../'+src+'?'+cb;\n        if (typeof js[i] != 'string') {\n          if (js[i].dep !== undefined) {\n            c.onload = function(dep,cb,target) {\n              return function() {\n                scriptLoader.run(dep,cb,target);\n              }\n            }(js[i].dep,cb,target);\n          }\n        }\n        s.parentNode.insertBefore(c,s);\n      }\n    }\n    \n  }\n</script>\n\n<script id=\"pl-js-polyfill-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [];\n      if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {\n        js.push('styleguide/bower_components/classList.min.js');\n      }\n      scriptLoader.run(js,cb,'pl-js-polyfill-insert');\n    }\n  })();\n</script>\n\n<script id=\"pl-js-insert-1569962387817\">\n  (function() {\n    if (self != top) {\n      var cb = '1569962387817';\n      var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];\n      scriptLoader.run(js,cb,'pl-js-insert');\n    }\n  })();\n</script>\n"
+         },
+         "patternBaseName": "home",
+         "patternName": "Home",
+         "patternGroup": "pages",
+         "patternType": "02-pages",
+         "patternSubGroup": "home",
+         "patternSubType": "home",
+         "flatPatternPath": "02-pages-home",
+         "patternLink": "02-pages-home-home/02-pages-home-home.rendered.html",
+         "patternPartial": "pages-home",
+         "verbosePartial": "02-pages/home/home",
+         "isPattern": true,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<div style=\"display: flex;\">\n    <div style=\"width: 50%; background: lightpink;\">\n        {{> components-card }}\n    </div>\n    <div style=\"width: 50%; background: lightsteelblue;\">\n        {{> components-card }}\n    </div>\n</div>",
+         "patternPartialCode": "<div style=\"display: flex;\">\n    <div style=\"width: 50%; background: lightpink;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n    <div style=\"width: 50%; background: lightsteelblue;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n</div>",
+         "lineage": [
+            {
+               "lineagePattern": "components-card",
+               "lineagePath": "../../patterns/01-components-cards-card/01-components-cards-card.rendered.html"
+            }
+         ],
+         "lineageIndex": [
+            "components-card"
+         ],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "clean",
+         "lastModified": 1569953276924,
+         "stylePartials": null,
+         "parameteredPartials": null,
+         "extendedTemplate": "<div style=\"display: flex;\">\n    <div style=\"width: 50%; background: lightpink;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n    <div style=\"width: 50%; background: lightsteelblue;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n</div>",
+         "patternLineages": [
+            {
+               "lineagePattern": "components-card",
+               "lineagePath": "../../patterns/01-components-cards-card/01-components-cards-card.rendered.html"
+            }
+         ],
+         "patternLineageExists": true,
+         "patternLineagesR": [],
+         "patternLineageRExists": false,
+         "patternLineageEExists": true,
+         "header": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternData": "{\"cssEnabled\":false,\"patternLineageExists\":true,\"patternLineages\":[{\"lineagePattern\":\"components-card\",\"lineagePath\":\"../../patterns/01-components-cards-card/01-components-cards-card.rendered.html\"}],\"lineage\":[{\"lineagePattern\":\"components-card\",\"lineagePath\":\"../../patterns/01-components-cards-card/01-components-cards-card.rendered.html\"}],\"patternLineageRExists\":false,\"patternLineagesR\":[],\"lineageR\":[],\"patternLineageEExists\":true,\"patternDesc\":\"\",\"patternBreadcrumb\":{\"patternType\":\"pages\",\"patternSubtype\":\"home\"},\"patternExtension\":\"mustache\",\"patternName\":\"Home\",\"patternPartial\":\"pages-home\",\"patternState\":\"\",\"patternEngineName\":\"mustache\",\"extraOutput\":{}}",
+         "isSubtypePattern": false
+      },
+      {
+         "relPath": "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head.mustache",
+         "fileName": "_00-head",
+         "subdir": "/Users/adambezemek/XC/webpack-patternlab/source/_meta",
+         "fileExtension": ".mustache",
+         "name": "-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head",
+         "jsonFileData": {},
+         "patternBaseName": "head",
+         "patternName": "Head",
+         "patternGroup": "",
+         "patternType": "",
+         "patternSubGroup": "meta",
+         "patternSubType": "_meta",
+         "flatPatternPath": "-Users-adambezemek-XC-webpack-patternlab-source-_meta",
+         "patternLink": "-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_00-head.rendered.html",
+         "patternPartial": "-head",
+         "verbosePartial": "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_00-head",
+         "isPattern": false,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "needs rebuild",
+         "lastModified": null,
+         "isMetaPattern": true,
+         "extendedTemplate": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+         "omitFromStyleguide": true
+      },
+      {
+         "relPath": "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot.mustache",
+         "fileName": "_01-foot",
+         "subdir": "/Users/adambezemek/XC/webpack-patternlab/source/_meta",
+         "fileExtension": ".mustache",
+         "name": "-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot",
+         "jsonFileData": {},
+         "patternBaseName": "foot",
+         "patternName": "Foot",
+         "patternGroup": "",
+         "patternType": "",
+         "patternSubGroup": "meta",
+         "patternSubType": "_meta",
+         "flatPatternPath": "-Users-adambezemek-XC-webpack-patternlab-source-_meta",
+         "patternLink": "-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot/-Users/adambezemek/XC/webpack-patternlab/source/_meta-_01-foot.rendered.html",
+         "patternPartial": "-foot",
+         "verbosePartial": "/Users/adambezemek/XC/webpack-patternlab/source/_meta/_01-foot",
+         "isPattern": false,
+         "isFlatPattern": false,
+         "patternState": "",
+         "template": "<!--DO NOT REMOVE-->\n{{{ patternLabFoot }}}\n<script src=\"../../js/vendor.js?{{cacheBuster}}\"></script>\n<script src=\"../../js/app.js?{{cacheBuster}}\"></script>\n</body>\n\n</html>",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": 9007199254740991,
+         "engine": "{mustache engine object}",
+         "compileState": "needs rebuild",
+         "lastModified": null,
+         "isMetaPattern": true,
+         "extendedTemplate": "<!--DO NOT REMOVE-->\n{{{ patternLabFoot }}}\n<script src=\"../../js/vendor.js?{{cacheBuster}}\"></script>\n<script src=\"../../js/app.js?{{cacheBuster}}\"></script>\n</body>\n\n</html>",
+         "omitFromStyleguide": true
+      }
+   ],
+   "subtypePatterns": {
+      "atoms-global": {
+         "relPath": "00-atoms/00-global.md",
+         "fileName": "00-global",
+         "subdir": "00-atoms",
+         "fileExtension": ".md",
+         "name": "00-atoms-00-global",
+         "jsonFileData": {},
+         "patternBaseName": "global",
+         "patternName": "Global",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "atoms",
+         "patternSubType": "00-atoms",
+         "flatPatternPath": "00-atoms-00-global",
+         "patternLink": "00-atoms-00-global/index.html",
+         "patternPartial": "atoms-global",
+         "verbosePartial": "00-atoms/00-global",
+         "isPattern": false,
+         "isFlatPattern": true,
+         "patternState": "",
+         "template": "",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": -9007199254740991,
+         "engine": null,
+         "compileState": null,
+         "lastModified": null,
+         "patternSectionSubtype": true,
+         "patternDesc": "<p>Global - [Insert description here (if needed)]</p>\n",
+         "isDocPattern": true
+      },
+      "atoms-text": {
+         "relPath": "00-atoms/text.md",
+         "fileName": "text",
+         "subdir": "00-atoms",
+         "fileExtension": ".md",
+         "name": "00-atoms-text",
+         "jsonFileData": {},
+         "patternBaseName": "text",
+         "patternName": "Text",
+         "patternGroup": "atoms",
+         "patternType": "00-atoms",
+         "patternSubGroup": "atoms",
+         "patternSubType": "00-atoms",
+         "flatPatternPath": "00-atoms-text",
+         "patternLink": "00-atoms-text/index.html",
+         "patternPartial": "atoms-text",
+         "verbosePartial": "00-atoms/text",
+         "isPattern": false,
+         "isFlatPattern": true,
+         "patternState": "",
+         "template": "",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": -9007199254740991,
+         "engine": null,
+         "compileState": null,
+         "lastModified": null,
+         "patternSectionSubtype": true,
+         "patternDesc": "<p>Text - [Insert description here (if needed)]</p>\n",
+         "isDocPattern": true
+      },
+      "components-cards": {
+         "relPath": "01-components/cards.md",
+         "fileName": "cards",
+         "subdir": "01-components",
+         "fileExtension": ".md",
+         "name": "01-components-cards",
+         "jsonFileData": {},
+         "patternBaseName": "cards",
+         "patternName": "Cards",
+         "patternGroup": "components",
+         "patternType": "01-components",
+         "patternSubGroup": "components",
+         "patternSubType": "01-components",
+         "flatPatternPath": "01-components-cards",
+         "patternLink": "01-components-cards/index.html",
+         "patternPartial": "components-cards",
+         "verbosePartial": "01-components/cards",
+         "isPattern": false,
+         "isFlatPattern": true,
+         "patternState": "",
+         "template": "",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": -9007199254740991,
+         "engine": null,
+         "compileState": null,
+         "lastModified": null,
+         "patternSectionSubtype": true,
+         "patternDesc": "<p>Cards - [Insert description here (if needed)]</p>\n",
+         "isDocPattern": true
+      },
+      "pages-home": {
+         "relPath": "02-pages/home.md",
+         "fileName": "home",
+         "subdir": "02-pages",
+         "fileExtension": ".md",
+         "name": "02-pages-home",
+         "jsonFileData": {},
+         "patternBaseName": "home",
+         "patternName": "Home",
+         "patternGroup": "pages",
+         "patternType": "02-pages",
+         "patternSubGroup": "pages",
+         "patternSubType": "02-pages",
+         "flatPatternPath": "02-pages-home",
+         "patternLink": "02-pages-home/index.html",
+         "patternPartial": "pages-home",
+         "verbosePartial": "02-pages/home",
+         "isPattern": false,
+         "isFlatPattern": true,
+         "patternState": "",
+         "template": "",
+         "patternPartialCode": "",
+         "lineage": [],
+         "lineageIndex": [],
+         "lineageR": [],
+         "lineageRIndex": [],
+         "isPseudoPattern": false,
+         "order": -9007199254740991,
+         "engine": null,
+         "compileState": null,
+         "lastModified": null,
+         "patternSectionSubtype": true,
+         "patternDesc": "<p>Home - [Insert description here (if needed)]</p>\n",
+         "isDocPattern": true
+      }
+   },
+   "partials": {
+      "atoms-brand-colors": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #252525;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-primary <br />\r\n\t\t\t#252525\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0ec9df;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-brand-secondary <br />\r\n\t\t\t#0ec9df\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+      "atoms-neutral-colors": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #ffffff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-white <br />\r\n\t\t\t#ffffff\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #f7f9f9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-02 <br />\r\n\t\t\t#f7f9f9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d9d9d9;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-15 <br />\r\n\t\t\t#d9d9d9\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a5a5a5;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-35 <br />\r\n\t\t\t#a5a5a5\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #808080;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-50 <br />\r\n\t\t\t#808080\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #595959;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-65 <br />\r\n\t\t\t#595959\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #444444;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-73 <br />\r\n\t\t\t#444444\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #222222;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-gray-87 <br />\r\n\t\t\t#222222\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #000000;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-black <br />\r\n\t\t\t#000000\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+      "atoms-utility-colors": "<ul class=\"sg-colors\">\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #03804d;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive <br />\r\n\t\t\t#03804d\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d4f3e6;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-positive-subtle <br />\r\n\t\t\t#d4f3e6\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #a59b15;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution <br />\r\n\t\t\t#a59b15\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fffecf;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-caution-subtle <br />\r\n\t\t\t#fffecf\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #b12a0b;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative <br />\r\n\t\t\t#b12a0b\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #fdded8;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-negative-subtle <br />\r\n\t\t\t#fdded8\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #0192d0;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral <br />\r\n\t\t\t#0192d0\r\n\t\t</span>\r\n\t</li>\r\n\t<li>\r\n\t\t<span class=\"sg-swatch\" style=\"background: #d3f2ff;\"></span>\r\n\t\t<span class=\"sg-label\">\r\n\t\t\t$color-utility-neutral-subtle <br />\r\n\t\t\t#d3f2ff\r\n\t\t</span>\r\n\t</li>\r\n</ul>",
+      "atoms-fonts": "<div>Primary font: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</div>\r\n<div>\r\n    <em>Primary font italic: \"HelveticaNeue\", \"Helvetica\", \"Arial\", sans-serif;</em>\r\n</div>\r\n<div>\r\n    <strong>Primary font bold: \"HelveticaNeue\", \"Helvetica\", \"Arial\",\r\n        sans-serif;</strong>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    Secondary font: Georgia, Times, \"Times New Roman\", serif;\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <em>Secondary font italic: Georgia, Times, \"Times New Roman\", serif;</em>\r\n</div>\r\n<div class=\"font-secondary\">\r\n    <strong>Secondary font bold; Georgia, Times, \"Times New Roman\", serif;</strong>\r\n</div>",
+      "atoms-headings": "<h1>Heading Level 1</h1>\r\n<h2>Heading Level 2</h2>\r\n<h3>Heading Level 3</h3>\r\n<h4>Heading Level 4</h4>\r\n<h5>Heading Level 5</h5>\r\n<h6>Heading Level 6</h6>",
+      "atoms-inline-elements": "<div class=\"text\">\r\n\t<p><a href=\"#\">This is a text link</a></p>\r\n\r\n\t<p><strong>Strong is used to indicate strong importance</strong></p>\r\n\r\n\t<p><em>This text has added emphasis</em></p>\r\n\r\n\t<p>The <b>b element</b> is stylistically different text from normal text, without any special importance</p>\r\n\r\n\t<p>The <i>i element</i> is text that is set off from the normal text</p>\r\n\r\n\t<p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation</p>\r\n\r\n\t<p><del>This text is deleted</del> and <ins>This text is inserted</ins></p>\r\n\r\n\t<p><s>This text has a strikethrough</s></p>\r\n\r\n\t<p>Superscript<sup>®</sup></p>\r\n\r\n\t<p>Subscript for things like H<sub>2</sub>O</p>\r\n\r\n\t<p><small>This small text is small for for fine print, etc.</small></p>\r\n\r\n\t<p>Abbreviation: <abbr title=\"HyperText Markup Language\">HTML</abbr></p>\r\n\r\n\t<p>Keybord input: <kbd>Cmd</kbd></p>\r\n\r\n\t<p><q cite=\"https://developer.mozilla.org/en-US/docs/HTML/Element/q\">This text is a short inline quotation</q></p>\r\n\r\n\t<p><cite>This is a citation</cite></p>\r\n\r\n\t<p>The <dfn>dfn element</dfn> indicates a definition.</p>\r\n\r\n\t<p>The <mark>mark element</mark> indicates a highlight</p>\r\n\r\n\t<p><code>This is what inline code looks like.</code></p>\r\n\r\n\t<p><samp>This is sample output from a computer program</samp></p>\r\n\r\n\t<p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>\r\n</div>\r\n<!--end .text-->",
+      "atoms-paragraph": "<p>A paragraph (from the Greek paragraphos, \"to write beside\" or \"written beside\") is a self-contained unit of a\r\n    discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though\r\n    not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to\r\n    organize longer prose.</p>",
+      "components-card": "<div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>",
+      "pages-home": "<div style=\"display: flex;\">\n    <div style=\"width: 50%; background: lightpink;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n    <div style=\"width: 50%; background: lightsteelblue;\">\n        <div class=\"card\" style=\"width: 18rem;\">\n    <img class=\"card-img-top\"\n        src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_16d8843b388%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_16d8843b388%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E\"\n        alt=\"Card image cap\">\n    <div class=\"card-body\">\n        <h5 class=\"card-title\">Card title</h5>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's\n            content.</p>\n        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n    </div>\n</div>\n    </div>\n</div>"
+   },
+   "cacheBuster": 1569962387817,
+   "listItemArray": [],
+   "userHead": "<!DOCTYPE html>\n<html>\n\n<head>\n  <meta charset=\"UTF-8\" />\n  <title>{{ title }}</title>\n  <meta name=\"description\" content=\"\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n\n  <link rel=\"stylesheet\" href=\"../../css/app.css?{{ cacheBuster }}\" media=\"all\" />\n  <link rel=\"stylesheet\" href=\"../../css/pattern-scaffolding.css?{{ cacheBuster }}\" media=\"all\" />\n\n  <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->\n  {{{ patternLabHead }}}\n  <!-- End Pattern Lab -->\n</head>\n\n<body>\n  <!--[if IE]>\n      <p class=\"browserupgrade\">\n        You are using an <strong>outdated</strong> browser. Please\n        <a href=\"https://browsehappy.com/\">upgrade your browser</a> to improve\n        your experience and security.\n      </p>\n    <![endif]-->\n</body>\n\n</html>",
+   "userFoot": "<!--DO NOT REMOVE-->\n{{{ patternLabFoot }}}\n<script src=\"../../js/vendor.js?{{cacheBuster}}\"></script>\n<script src=\"../../js/app.js?{{cacheBuster}}\"></script>\n</body>\n\n</html>",
+   "patternPaths": {
+      "atoms": {
+         "brand-colors": "00-atoms-00-global-00-brand-colors",
+         "neutral-colors": "00-atoms-00-global-01-neutral-colors",
+         "utility-colors": "00-atoms-00-global-02-utility-colors",
+         "fonts": "00-atoms-00-global-03-fonts",
+         "headings": "00-atoms-text-headings",
+         "inline-elements": "00-atoms-text-inline-elements",
+         "paragraph": "00-atoms-text-paragraph"
+      },
+      "components": {
+         "card": "01-components-cards-card"
+      },
+      "pages": {
+         "home": "02-pages-home-home"
+      }
+   },
+   "viewAllPaths": {
+      "atoms": {
+         "global": "00-atoms-00-global",
+         "all": "00-atoms",
+         "text": "00-atoms-text"
+      },
+      "components": {
+         "cards": "01-components-cards",
+         "all": "01-components"
+      },
+      "pages": {
+         "home": "02-pages-home",
+         "all": "02-pages"
+      }
+   },
+   "patternTypes": [
+      {
+         "patternTypeLC": "atoms",
+         "patternTypeUC": "Atoms",
+         "patternType": "00-atoms",
+         "patternTypeDash": "atoms",
+         "patternTypeItems": [
+            {
+               "patternSubtypeLC": "global",
+               "patternSubtypeUC": "Global",
+               "patternSubtype": "00-global",
+               "patternSubtypeDash": "global",
+               "patternSubtypeItems": [
+                  {
+                     "patternPartial": "viewall-atoms-global",
+                     "patternName": "View All",
+                     "patternPath": "00-atoms-00-global/index.html",
+                     "patternType": "00-atoms",
+                     "order": 0
+                  },
+                  {
+                     "patternPartial": "atoms-brand-colors",
+                     "patternName": "Brand Colors",
+                     "patternState": "inreview",
+                     "patternSrcPath": "00-atoms/00-global/00-brand-colors",
+                     "patternPath": "00-atoms-00-global/00-atoms-00-global.html",
+                     "order": 9007199254740991
+                  },
+                  {
+                     "patternPartial": "atoms-neutral-colors",
+                     "patternName": "Neutral Colors",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/00-global/01-neutral-colors",
+                     "patternPath": "00-atoms-00-global/00-atoms-00-global.html",
+                     "order": 9007199254740991
+                  },
+                  {
+                     "patternPartial": "atoms-utility-colors",
+                     "patternName": "Utility Colors",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/00-global/02-utility-colors",
+                     "patternPath": "00-atoms-00-global/00-atoms-00-global.html",
+                     "order": 9007199254740991
+                  },
+                  {
+                     "patternPartial": "atoms-fonts",
+                     "patternName": "Fonts",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/00-global/03-fonts",
+                     "patternPath": "00-atoms-00-global/00-atoms-00-global.html",
+                     "order": 9007199254740991
+                  }
+               ]
+            },
+            {
+               "patternSubtypeLC": "text",
+               "patternSubtypeUC": "Text",
+               "patternSubtype": "text",
+               "patternSubtypeDash": "text",
+               "patternSubtypeItems": [
+                  {
+                     "patternPartial": "viewall-atoms-text",
+                     "patternName": "View All",
+                     "patternPath": "00-atoms-text/index.html",
+                     "patternType": "00-atoms",
+                     "order": 0
+                  },
+                  {
+                     "patternPartial": "atoms-headings",
+                     "patternName": "Headings",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/text/headings",
+                     "patternPath": "00-atoms-text/00-atoms-text.html",
+                     "order": 9007199254740991
+                  },
+                  {
+                     "patternPartial": "atoms-inline-elements",
+                     "patternName": "Inline Elements",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/text/inline-elements",
+                     "patternPath": "00-atoms-text/00-atoms-text.html",
+                     "order": 9007199254740991
+                  },
+                  {
+                     "patternPartial": "atoms-paragraph",
+                     "patternName": "Paragraph",
+                     "patternState": "",
+                     "patternSrcPath": "00-atoms/text/paragraph",
+                     "patternPath": "00-atoms-text/00-atoms-text.html",
+                     "order": 9007199254740991
+                  }
+               ]
+            }
+         ],
+         "patternItems": [
+            {
+               "patternPartial": "viewall-atoms-all",
+               "patternName": "View All",
+               "patternPath": "00-atoms/index.html",
+               "order": -9007199254740991
+            }
+         ]
+      },
+      {
+         "patternTypeLC": "components",
+         "patternTypeUC": "Components",
+         "patternType": "01-components",
+         "patternTypeDash": "components",
+         "patternTypeItems": [
+            {
+               "patternSubtypeLC": "cards",
+               "patternSubtypeUC": "Cards",
+               "patternSubtype": "cards",
+               "patternSubtypeDash": "cards",
+               "patternSubtypeItems": [
+                  {
+                     "patternPartial": "viewall-components-cards",
+                     "patternName": "View All",
+                     "patternPath": "01-components-cards/index.html",
+                     "patternType": "01-components",
+                     "order": 0
+                  },
+                  {
+                     "patternPartial": "components-card",
+                     "patternName": "Card",
+                     "patternState": "",
+                     "patternSrcPath": "01-components/cards/card",
+                     "patternPath": "01-components-cards/01-components-cards.html",
+                     "order": 9007199254740991
+                  }
+               ]
+            }
+         ],
+         "patternItems": [
+            {
+               "patternPartial": "viewall-components-all",
+               "patternName": "View All",
+               "patternPath": "01-components/index.html",
+               "order": -9007199254740991
+            }
+         ]
+      },
+      {
+         "patternTypeLC": "pages",
+         "patternTypeUC": "Pages",
+         "patternType": "02-pages",
+         "patternTypeDash": "pages",
+         "patternTypeItems": [
+            {
+               "patternSubtypeLC": "home",
+               "patternSubtypeUC": "Home",
+               "patternSubtype": "home",
+               "patternSubtypeDash": "home",
+               "patternSubtypeItems": [
+                  {
+                     "patternPartial": "viewall-pages-home",
+                     "patternName": "View All",
+                     "patternPath": "02-pages-home/index.html",
+                     "patternType": "02-pages",
+                     "order": 0
+                  },
+                  {
+                     "patternPartial": "pages-home",
+                     "patternName": "Home",
+                     "patternState": "",
+                     "patternSrcPath": "02-pages/home/home",
+                     "patternPath": "02-pages-home/02-pages-home.html",
+                     "order": 9007199254740991
+                  }
+               ]
+            }
+         ],
+         "patternItems": [
+            {
+               "patternPartial": "viewall-pages-all",
+               "patternName": "View All",
+               "patternPath": "02-pages/index.html",
+               "order": -9007199254740991
+            }
+         ]
+      }
+   ]
+}
