@@ -53,3 +53,24 @@
   font-size: 90%;
   line-height: 1;
 }
+
+.patternLink {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0 !important;
+  color: #000;
+}
+
+.patternLink:hover,
+.patternLink:visited {
+  color: #000;
+}
+
+.sg-pattern-category {
+  margin-top: 3rem !important;
+  border-bottom: 4px double #ddd;
+  padding-bottom: .5rem;
+  
+}
+.sg-pattern-category p {
+  margin-bottom: 0;
+}
