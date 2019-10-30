@@ -1,4 +1,7 @@
 {
+  "html.suggest.html5": true,
+  "html.format.wrapLineLength": 0,
+  "html.format.wrapAttributes": "force-expand-multiline",
   "files.associations": { "*.mustache": "html" },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features",
