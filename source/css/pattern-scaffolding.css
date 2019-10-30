@@ -74,3 +74,10 @@
 .sg-pattern-category p {
   margin-bottom: 0;
 }
+
+/* 
+  To customize the patternlab wrapper more please refer to this codepen:
+  https://codepen.io/bmuenzenmeyer/pen/RKqBqX 
+  and plugin docs:
+  https://github.com/bmuenzenmeyer/plugin-node-uiextension
+*/
