@@ -19,4 +19,4 @@
 - `cd public`
 - `npx lite-server` - *or any other simple server setup*
 
->The `pubic` folder can be pushed out to an Azure server or another host for QA testing if the project requires a FE testing environment that is separate from the Sitecore solution.
+>The `public` folder can be pushed out to an Azure server or another host for QA testing if the project requires a FE testing environment that is separate from the Sitecore solution.

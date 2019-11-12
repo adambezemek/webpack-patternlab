@@ -1,0 +1,21 @@
+.fifty-fifty {
+    max-height: 300px;
+
+    .content-side {
+
+    }
+
+    .img-side {
+        img {
+            object-fit: cover;
+            max-height: 500px;
+            max-width: 630px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .fifty-fifty {
+        max-height: 500px;
+    }
+}
