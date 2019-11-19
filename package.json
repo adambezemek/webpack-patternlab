@@ -8,8 +8,8 @@
   },
   "license": "(MIT OR Apache-2.0)",
   "scripts": {
-    "start": "npm run patternlab:serve",
-    "build": "npm run patternlab:build",
+    "start": "npm run clean && npm run patternlab:serve",
+    "build": "npm run clean && npm run patternlab:build",
     "diagnosis": "run-s patternlab:version webpack:version patternlab:build patternlab:serve",
     "postinstall": "node scripts/postinstall.js",
     "patternlab:build": "webpack --mode=production --env.production",
@@ -20,7 +20,8 @@
     "patternlab:patternsonly": "node patternlab.js patternsonly",
     "patternlab:serve": "webpack-dev-server --mode=development --env.development",
     "patternlab:version": "node patternlab.js version",
-    "webpack:version": "webpack --v"
+    "webpack:version": "webpack --v",
+    "clean": "node scripts/clean.js"
   },
   "babel": {
     "plugins": [

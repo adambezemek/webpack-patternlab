@@ -53,7 +53,7 @@
   "styleGuideExcludes": [],
   "defaultPattern": "all",
   "defaultShowPatternInfo": false,
-  "cleanPublic": true,
+  "cleanPublic": false,
   "patternExtension": "mustache",
   "debug": false,
   "ishControlsHide": {
