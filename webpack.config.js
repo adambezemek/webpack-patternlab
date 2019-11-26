@@ -27,15 +27,24 @@ module.exports = env => {
             fs: 'empty',
         },
         entry: {
-            'js/app': globby.sync([
-                resolve(__dirname, `${plConfig.paths.source.js}**/*.js`),
-            ]),
-            'css/app': globby.sync([
-                resolve(
-                    __dirname,
-                    `${plConfig.paths.source.scss}**/style.scss`
-                ),
-            ]),
+            'js/app': globby
+                .sync([
+                    resolve(__dirname, `${plConfig.paths.source.js}**/*.js`),
+                    '!**/*.test.js',
+                ])
+                .map(function(filePath) {
+                    return filePath;
+                }),
+            'css/app': globby
+                .sync([
+                    resolve(
+                        __dirname,
+                        `${plConfig.paths.source.scss}**/style.scss`
+                    ),
+                ])
+                .map(function(filePath) {
+                    return filePath;
+                }),
         },
         output: {
             path: resolve(__dirname, plConfig.paths.public.root),
@@ -59,8 +68,10 @@ module.exports = env => {
             },
         },
         plugins: removeEmpty([
-            ifDevelopment(new webpack.NamedModulesPlugin()),
-
+            ifDevelopment(
+                new webpack.HotModuleReplacementPlugin(),
+                new webpack.NamedModulesPlugin()
+            ),
             // Remove with PL Core 3.x
             new CopyWebpackPlugin([
                 {
@@ -136,7 +147,8 @@ module.exports = env => {
                                 compilation.fileDependencies.add(item);
                             });
                         });
-
+                    },
+                    thisCompilation: () => {
                         let cleanPublic = plConfig.cleanPublic;
                         process.argv.forEach((val, index) => {
                             if (val.includes('cleanPublic')) {
