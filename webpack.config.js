@@ -13,6 +13,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const rimraf = require('rimraf');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const bs = require('browser-sync').create();
 
 module.exports = env => {
     const { ifProduction, ifDevelopment } = getIfUtils(env);
@@ -145,20 +148,45 @@ module.exports = env => {
                             });
                         });
                     },
+                    thisCompilation: () => {
+                        let cleanPublic = plConfig.cleanPublic;
+                        process.argv.forEach((val, index) => {
+                            if (val.includes('cleanPublic')) {
+                                val = val.split('=');
+                                cleanPublic = JSON.parse(val[1]);
+                            }
+                        });
+
+                        rimraf('public', [], () => {
+                            console.log(
+                                '\x1b[36m',
+                                '### Public Folder Cleaned ###',
+                                '\x1b[0m'
+                            );
+                            setTimeout(function() {
+                                patternlab.build(() => {
+                                    console.log(
+                                        '\x1b[36m',
+                                        '### Patternlab Rebuild Complete ###',
+                                        '\x1b[0m'
+                                    );
+                                }, cleanPublic);
+                            });
+                        });
+                    },
+                    done: () => {
+                        console.log(
+                            '\x1b[36m',
+                            '### Reload Browser ###',
+                            '\x1b[0m'
+                        );
+
+                        bs.reload();
+                    },
                 })
             ),
-            new EventHooksPlugin({
-                done: function(stats) {
-                    let cleanPublic = plConfig.cleanPublic;
-                    process.argv.forEach((val, index) => {
-                        if (val.includes('cleanPublic')) {
-                            val = val.split('=');
-                            cleanPublic = JSON.parse(val[1]);
-                        }
-                    });
-
-                    patternlab.build(() => {}, cleanPublic);
-                },
+            new BrowserSyncPlugin({
+                port: plConfig.app.webpackDevServer.port,
             }),
             new FixStyleOnlyEntriesPlugin(),
             new MiniCssExtractPlugin({
@@ -181,7 +209,7 @@ module.exports = env => {
             publicPath: `${plConfig.app.webpackDevServer.url}:${plConfig.app.webpackDevServer.port}`,
             port: plConfig.app.webpackDevServer.port,
             open: true,
-            hot: true,
+            hot: false,
             watchContentBase: plConfig.app.webpackDevServer.watchContentBase,
             watchOptions: plConfig.app.webpackDevServer.watchOptions,
         },
